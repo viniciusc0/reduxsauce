@@ -9,10 +9,10 @@ import "./styles.css";
 class TodoList extends Component {
   handleSubmit = e => {
     e.preventDefault();
+    if(this.input.value !== "" && this.input.value != undefined)
+      this.props.addTodo(this.input.value)
 
-    this.props.addTodo(this.input.value);
-
-    this.input.value = "";
+    this.input.value = ""
   };
 
   render() {
